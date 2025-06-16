@@ -27,23 +27,23 @@ const routes = [
     href: "/admin/dashboard/product/new",
     color: "text-pink-700",
   },
-  {
-    label: "Orders",
-    icon: ShoppingCart,
-    href: "/admin/orders",
-    color: "text-orange-500",
-  },
-  {
-    label: "Customers",
-    icon: Users,
-    href: "/admin/customers",
-    color: "text-green-500",
-  },
-  {
-    label: "Settings",
-    icon: Settings,
-    href: "/admin/settings",
-  },
+  // {
+  //   label: "Orders",
+  //   icon: ShoppingCart,
+  //   href: "/admin/orders",
+  //   color: "text-orange-500",
+  // },
+  // {
+  //   label: "Customers",
+  //   icon: Users,
+  //   href: "/admin/customers",
+  //   color: "text-green-500",
+  // },
+  // {
+  //   label: "Settings",
+  //   icon: Settings,
+  //   href: "/admin/settings",
+  // },
 ]
 
 export default function AdminSidebar() {
