@@ -1,13 +1,11 @@
 "use client"
 
-import { Edit, Loader2, Trash2 } from 'lucide-react'
+import { Edit, Trash2 } from 'lucide-react'
 import Image from 'next/image'
 import MoreProductCardButton from './MoreProductCardButton'
 import DeleteProductCardButton from './DeleteProductCardButton'
 import { ProductInterface } from '@/types/product'
-import Link from 'next/link'
 import { Badge } from '../ui/badge'
-import { useState } from 'react'
 import { useLoadingPage } from '@/context/LoadingPageContext'
 import { Button } from '../ui/button'
 import { useRouter } from 'next/navigation'
@@ -15,7 +13,7 @@ import { useRouter } from 'next/navigation'
 function ProductTemplate({ name, brand, sizes, price, stock, images, category, style }: ProductInterface) {
 
 
-    const { isPageLoading, setIsPageLoading } = useLoadingPage()
+    const { setIsPageLoading } = useLoadingPage()
 
     const router = useRouter()
 

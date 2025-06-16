@@ -29,6 +29,7 @@ export default function ProductsAdminPage() {
 
                 setProducts(response.data.data);
             } catch (error) {
+                console.error("Failed to fetch products:", error);
                 setIsError(true);
             } finally {
                 setLoading(false);

@@ -1,6 +1,4 @@
-import api from "@/lib/axios-api/api";
 import { signIn } from "next-auth/react"
-import { toast } from "sonner"
 
 export const adminLogin = async (email: string, password: string) => {
     try {

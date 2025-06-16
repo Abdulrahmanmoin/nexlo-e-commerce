@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import Link from "next/link"
 import { loginSchema } from "@/zodSchemas/loginSchema"
+import { isAxiosError } from "axios"
 
 // Infer the type from the schema
 type LoginFormValues = z.infer<typeof loginSchema>
@@ -63,9 +64,9 @@ export default function LoginForm() {
             }
 
 
-        } catch (error: any) {
+        } catch (error: unknown) {
 
-            if (error.response?.status === 401) {
+            if (isAxiosError(error) && error.response?.status === 401) {
                 setErrorMessage(error.response?.data?.message || "Invalid email or password. Please try again.") // Display error message
             } else {
                 setErrorMessage("An unexpected error occurred. Please try again later.")

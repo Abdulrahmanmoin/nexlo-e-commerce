@@ -2,7 +2,7 @@ import { ApiResponseHandler } from "@/lib/api-response";
 import connectDB from "@/lib/connectDB";
 import ShoeModel from "@/Models/ShoeSchema";
 import { NextRequest } from "next/server";
-import { imagekit } from "../product-delete/route";
+import { imagekit } from "@/lib/ImageKitInstance";
 
 export async function PATCH(req: NextRequest) {
     try {

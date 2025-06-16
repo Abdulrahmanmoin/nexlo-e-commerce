@@ -1,6 +1,5 @@
 "use client"
 
-import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ChevronLeft, Edit, Loader2, Package } from "lucide-react"
@@ -8,13 +7,8 @@ import { notFound, useParams } from "next/navigation"
 import ProductViewDetails from "@/components/admin/ProductViewDetails"
 import { getProductByName } from "@/lib/axios-api/admin/adminGetProductByName"
 import { useLoadingPage } from "@/context/LoadingPageContext"
-import { useEffect, useState, use } from "react"
+import { useEffect, useState } from "react"
 import { ProductInterface } from "@/types/product"
-
-// export const metadata: Metadata = {
-//   title: "Product Details | Admin Dashboard",
-//   description: "View product details",
-// }
 
 async function getProduct(name: string) {
   const product = await getProductByName(name)
@@ -33,7 +27,7 @@ export default function ProductViewPage() {
   }, [])
 
   const params = useParams<{ name: string }>();
-  const productName = decodeURIComponent(params.name);
+  const productName = decodeURIComponent(params?.name ?? "");
 
   useEffect(() => {
     const fetchProduct = async () => {

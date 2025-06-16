@@ -99,7 +99,6 @@ export default function EditProductForm({ product }: EditProductFormProps) {
     const [images, setImages] = useState<File[]>([])
     const [imageUrls, setImageUrls] = useState<string[]>(product.images)
     const [uploadProgress, setUploadProgress] = useState(0)
-    const [filesUploadResponse, setFilesUploadResponse] = useState<UploadResponse[]>([]);
 
     // Initialize the form with existing product data
     const form = useForm<ProductFormValues>({
@@ -213,7 +212,6 @@ export default function EditProductForm({ product }: EditProductFormProps) {
 
             // Wait for all uploads to complete
             const responses = await Promise.all(uploadPromises) as UploadResponse[];
-            setFilesUploadResponse(responses);
             return responses; // Return all upload responses
 
         } catch (error) {

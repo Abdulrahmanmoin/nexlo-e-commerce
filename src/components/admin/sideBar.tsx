@@ -7,9 +7,6 @@ import { BarChart3, Package, ShoppingCart, Users, Settings, LogOut, Menu, X, Hom
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { signOut } from "next-auth/react"
-import { useRouter } from "next/navigation"
-import { useLoadingPage } from "@/context/LoadingPageContext"
-
 
 const routes = [
   {

@@ -4,7 +4,7 @@ import AdminSidebar from "@/components/admin/sideBar"
 import { Toaster } from "@/components/ui/sonner"
 import { Session } from "@/types/session"
 import { getServerSession } from "next-auth"
-import { authOptions } from "@/app/api/(authentications)/auth/[...nextauth]/route"
+import { authOptions } from "@/lib/authOptions"
 import { redirect } from 'next/navigation'
 import LoadingPageProviderWrapper from "@/components/LoadingPageProviderWrapper"
 

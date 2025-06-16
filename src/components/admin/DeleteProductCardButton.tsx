@@ -1,5 +1,4 @@
 import { adminDeleteProduct } from '@/lib/axios-api/admin/adminDeleteProduct'
-import { Trash2 } from 'lucide-react'
 import React from 'react'
 import {
     AlertDialog,
@@ -22,20 +21,13 @@ function DeleteProductCardButton({ productName, childrenJsx }: { productName: st
     return (
         <AlertDialog>
             <AlertDialogTrigger>
-                {/* <div
-                    className='flex justify-center border-1 border-gray-300 rounded-md px-3 py-2 cursor-pointer hover:bg-red-100'>
-                    <Trash2
-                        size={18}
-                        className='text-red-700'
-                    />
-                </div> */}
                 {childrenJsx}
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
                     <AlertDialogTitle>Delete Product</AlertDialogTitle>
                     <AlertDialogDescription>
-                        Are you sure you want to delete "{productName}"? This action cannot be undone.
+                        Are you sure you want to delete &quot;{productName}&quot;? This action cannot be undone.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

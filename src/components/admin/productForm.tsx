@@ -30,9 +30,6 @@ import {
 } from "@imagekit/next";
 import { UploadResponse } from "@imagekit/next";
 
-// Create an AbortController instance to provide an option to cancel the upload if needed.
-const abortController = new AbortController();
-
 // styles for the dropdown
 const styles = [
   { label: "Running", value: "running" },
@@ -168,7 +165,7 @@ export default function ProductForm() {
   // Create an AbortController instance to provide an option to cancel the upload if needed.
   const abortController = new AbortController();
 
-  const handleUpload = async (files: any) => {
+  const handleUpload = async (files: File[]) => {
     // Access the file input element using the ref
     // const fileInput = fileInputRef.current;
     if (!files || files.length === 0) {
@@ -192,7 +189,7 @@ export default function ProductForm() {
     // Call the ImageKit SDK upload function with the required parameters and callbacks.
     try {
 
-      files.forEach(async (file: any) => {
+      files.forEach(async (file: File) => {
 
         const uploadResponse = await upload({
           // Authentication parameters

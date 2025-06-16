@@ -35,7 +35,7 @@ function MoreProductCardButton({ productName }: { productName: string }) {
     }
 
     useEffect(() => {
-      if (!(pathname.startsWith('/admin/dashboard/products/'))) {
+      if (pathname && !(pathname.startsWith('/admin/dashboard/products/'))) {
         setIsPageLoading(false)
       }
     }, [setIsPageLoading, pathname])

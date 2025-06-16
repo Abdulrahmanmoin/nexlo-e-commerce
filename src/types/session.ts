@@ -1,9 +1,9 @@
 type SessionUser = {
   role: string;
-  [key: string]: any;
+  [key: string]: unknown;
 };
 
 export type Session = {
   user: SessionUser;
-  [key: string]: any;
+  [key: string]: unknown;
 } | null;

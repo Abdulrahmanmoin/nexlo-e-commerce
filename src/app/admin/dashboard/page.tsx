@@ -1,15 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Loader2, Package, ShoppingCart, Users } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { Package, ShoppingCart, Users } from "lucide-react"
 import { getAllProducts } from "@/lib/axios-api/admin/adminGetAllProducts"
 import AddProductLink from "@/components/admin/AddProductLink"
 import DashboardLinks from "@/components/admin/DashboardLinks"
 
 export default async function AdminDashboard() {
-
-
-  // const [isLoading, setIsLoading] = useState(false)
 
   const getNumberOfAllProducts = async () => {
     const response = await getAllProducts()

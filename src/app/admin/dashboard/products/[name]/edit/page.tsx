@@ -11,13 +11,19 @@ export const metadata: Metadata = {
   description: "Edit product details",
 }
 
+type EditProductPageProps = {
+  params: Promise<{ name: string }>
+}
+
+
 async function getProduct(name: string) {
   const product = await getProductByName(name)
   return product;
 }
 
-export default async function EditProductPage({ params }: { params: { name: string } }) {
+export default async function EditProductPage(props: EditProductPageProps) {
 
+  const params  = await props.params;
   const productName = decodeURIComponent(params.name);
 
   const product = await getProduct(productName);
